@@ -1,0 +1,20 @@
+ html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,  <title>To-Do List App</title> <style> body { font-family: Arial, sans-serif; background:#f5f5f5; }
+.container { width: 400px; margin: 50px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(O,O,O,O.2);} h2 { text-align: center; } input { width: 70%; padding: 8px; } button { padding: 8px 12px; margin-left: 5px; cursor: pointer; } ul { list-style: none; padding: O; } li { display: flex; justify-content: space-between; padding: 8px; border-bottom: Ipx solid #ddd; } li.completed { text-decoration: line-through; color: gray; }
+<div class="container"> <h2>To-Do List</h2>
+<input type="text"   placeholder="Enter task">
+<button onclick="addTask()">Add</button> <ul 
+<script> let tasks = JSON.parse(localStorage.getItem("tasks")) Il [l;
+function renderTasks() { const list = document.getElementById("taskList"); list.innerHTML =  tasks.forEach((task, index) { list.innerHTML += '
+<li class="${task.done ? 'completed' : "}">
+${task.name}
+<button onclick="toggleTask(${index})">Done</button>
+<button onclick="deleteTask(${index})">Delete</button>
+localStorage.setItem ("tas ks", J SON .stri ngify(tas ks));
+function addTask() { const input = document.getElementById("taskInput"); if(input.value.trim() === ) return; tasks.push({ name: input.value, done: false }); input.value =  renderTasks();
+function deleteTask(index) { tasks.splice(index, 1); renderTasks();
+renderTasks();
+</scri 
